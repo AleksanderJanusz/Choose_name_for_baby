@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="background-image-girl">
+        <div class="left"></div>
+        <div class="center">
+            <div class="new_head">
+                {% include 'girl_name/choose.html' %}
+            </div>
+            <div class="choose" id="over_buttons">
+                <h2 class="border-active"><a href="#">Tak</a></h2>
+                <h2><a href="#">Nie</a></h2>
+                <h2><a href="#">Może</a></h2>
+            </div>
+            <div class="wide-div">
+                <ul id="ul-yes">
+                    {% for girl in girls %}
+                        {% if girl.choice == 0 %}
+                            <li>
+                                {{ girl.name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul id="ul-no" class="d-none">
+                    {% for girl in girls %}
+                        {% if girl.choice == 1 %}
+                            <li>
+                                {{ girl.name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul id="ul-maybe" class="d-none">
+                    {% for girl in girls %}
+                        {% if girl.choice == 2 %}
+                            <li>
+                                {{ girl.name }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="right"></div>
+
+    </div>
+    <script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

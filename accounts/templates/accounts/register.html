@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="background-accounts">
+        <div class="profile-container">
+            <h1>Załóż konto</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div style="display: flex; justify-content: center">
+                    <button class="btn" type="submit">Zarejestruj się</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

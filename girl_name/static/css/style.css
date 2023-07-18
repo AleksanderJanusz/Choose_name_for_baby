@@ -1,0 +1,376 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.button-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-div {
+    flex-basis: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(0.16turn, lightblue, blue, purple, deeppink, pink);
+}
+
+.header-div a {
+    text-decoration: none;
+    color: white;
+    margin: 0 50px 0 50px;
+}
+
+.header-div p {
+    color: white;
+    margin: 0 50px 0 50px;
+}
+
+.button {
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    color: white;
+    cursor: pointer;
+}
+
+.button-girl {
+    background: linear-gradient(to left, pink, deeppink);
+}
+
+.button-boy {
+    background: linear-gradient(to right, lightblue, blue);
+}
+
+.button-other {
+    background: linear-gradient(0.25turn, blue, purple, deeppink);
+}
+
+
+.footer {
+    background-color: #261519;
+    color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.footer p {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
+
+.button-a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.background-image {
+    background-image: url(/static/img/gb.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.background-image-girl {
+    background: #261519;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    color: white;
+}
+
+.background-image-girl .left {
+    background: linear-gradient(to right, deeppink, pink);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-girl .right {
+    background: linear-gradient(to left, deeppink, pink);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-girl .center {
+    background: rgba(255, 192, 203, 0.9);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.background-image-girl .wide-div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-girl ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-girl li {
+    font-size: 24px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.background-image-boy {
+    background: #261519;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    color: white;
+}
+
+.background-image-boy .left {
+    background: linear-gradient(to right, blue, lightblue);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-boy .right {
+    background: linear-gradient(to left, blue, lightblue);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-boy .center {
+    background: rgba(173, 216, 230, 0.9);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.background-image-boy .wide-div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-boy ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-boy li {
+    font-size: 24px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.background-accounts {
+    background: linear-gradient(to right, rgba(255, 20, 147, 0.5) 0%, rgba(255, 20, 147, 0.8) 15%, rgba(255, 20, 147, 1) 19%, rgba(255, 20, 147, 1) 20%, rgba(128, 0, 128, 1) 50%, rgba(0, 0, 255, 1) 80%, rgba(0, 0, 255, 1) 81%, rgba(0, 0, 255, 0.8) 85%, rgba(0, 0, 255, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    height: 40%;
+    margin: 30px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 500px rgba(255, 255, 255, 1);
+}
+
+.profile-container h1 {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    width: 100%;
+}
+
+.profile-container p {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.profile-container input {
+    font-size: 24px;
+}
+
+.btn {
+    text-decoration: none;
+    background: linear-gradient(0.25turn, blue, purple, deeppink);
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 25px;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background: linear-gradient(0.25turn, deeppink, purple, blue);
+}
+
+.choose {
+    display: flex;
+    justify-content: center
+}
+
+.choose a {
+    text-decoration: none;
+    color: white;
+    margin: 0 100px 0 100px;
+}
+
+.choose a:hover {
+    text-decoration: underline;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.new_head {
+    width: 100%;
+    height: 67px;
+}
+
+.background-choose-girl {
+    background: linear-gradient(to right, rgba(255, 20, 147, 0.5) 0%, rgba(255, 20, 147, 0.8) 15%, rgba(255, 20, 147, 1) 19%, rgba(255, 20, 147, 1) 20%, rgba(255, 192, 203, 1) 50%, rgba(255, 20, 147, 1) 80%, rgba(255, 20, 147, 1) 81%, rgba(255, 20, 147, 0.8) 85%, rgba(255, 20, 147, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.btn-girl {
+    text-decoration: none;
+    background: deeppink;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 25px;
+}
+
+.btn-girl:hover {
+    text-decoration: none;
+    background: pink;
+    color: deeppink;
+}
+
+.background-choose-boy {
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.5) 0%, rgba(0, 0, 255, 0.8) 15%, rgba(0, 0, 255, 1) 19%, rgba(0, 0, 255, 1) 20%, rgba(173, 216, 230, 1) 50%, rgba(0, 0, 255, 1) 80%, rgba(0, 0, 255, 1) 81%, rgba(0, 0, 255, 0.8) 85%, rgba(0, 0, 255, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.btn-boy {
+    text-decoration: none;
+    background: blue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 25px;
+}
+
+.btn-boy:hover {
+    text-decoration: none;
+    background: lightblue;
+    color: blue;
+}
+
+.choose h2 {
+    padding: 10px;
+}
+
+.border-active {
+    border: 2px solid white;
+}
+
+.d-none {
+    display: none !important;
+}
