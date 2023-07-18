@@ -134,12 +134,23 @@ a:hover {
     box-sizing: border-box;
 }
 
+.background-image-girl .wide-div a {
+    text-decoration: none;
+    color: white;
+    cursor: grab;
+}
+
+.background-image-girl .wide-div a:hover {
+    color: deeppink;
+}
+
+
 .background-image-girl ul {
     list-style: none;
     padding: 20px 0;
     margin: 0;
     text-align: center;
-    max-height: calc(100vh - 120px);
+    height: calc(100vh - 270px);
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
@@ -198,7 +209,7 @@ a:hover {
     padding: 20px 0;
     margin: 0;
     text-align: center;
-    max-height: calc(100vh - 120px);
+    height: calc(100vh - 270px);
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
