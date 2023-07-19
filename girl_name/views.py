@@ -96,18 +96,26 @@ class GirlComparison(LoginRequiredMixin, View):
         if second_user == self_user:
             return render(request, 'girl_name/compare.html', {'error': 'To jest twój email'})
 
-        yes_choices_self = Choice.objects.filter(choice=0).filter(user=self_user).filter(name__gender=1)
-        yes_choices = [Choice.objects.filter(choice=0).filter(user=second_user).filter(name_id=choice.name_id).first()
-                       for choice in yes_choices_self if
-                       Choice.objects.filter(choice=0).filter(user=second_user).filter(name_id=choice.name_id)]
-
-        maybe_choices_self = Choice.objects.filter(choice=2).filter(user=self_user).filter(name__gender=1)
-        maybe_choices = [Choice.objects.filter(choice=2).filter(user=second_user).filter(name_id=choice.name_id).first()
-                         for choice in maybe_choices_self if
-                         Choice.objects.filter(choice=2).filter(user=second_user).filter(name_id=choice.name_id)]
+        maybe_choices, yes_choices = yes_maybe_choices(second_user, self_user)
 
         return render(request, 'girl_name/compare_list.html', {'yeah': yes_choices,
                                                                'maybe': maybe_choices})
+
+
+def yes_maybe_choices(second_user, self_user):
+    yes_choices_self = Choice.objects.filter(choice=0).filter(user=self_user).filter(name__gender=1)
+    yes_choices = choice_comp(second_user, yes_choices_self)
+    maybe_choices_self = Choice.objects.filter(choice=2).filter(user=self_user).filter(name__gender=1)
+    maybe_choices = choice_comp(second_user, maybe_choices_self)
+    return maybe_choices, yes_choices
+
+
+def choice_comp(second_user, yes_choices_self):
+    yes_choices = [
+        Choice.objects.filter(Q(choice=2) | Q(choice=0)).filter(user=second_user).filter(name_id=choice.name_id).first()
+        for choice in yes_choices_self if
+        Choice.objects.filter(Q(choice=2) | Q(choice=0)).filter(user=second_user).filter(name_id=choice.name_id)]
+    return yes_choices
 
 
 class BoyComparison(LoginRequiredMixin, View):
@@ -126,15 +134,6 @@ class BoyComparison(LoginRequiredMixin, View):
         if second_user == self_user:
             return render(request, 'girl_name/compare_b.html', {'error': 'To jest twój email'})
 
-        yes_choices_self = Choice.objects.filter(choice=0).filter(user=self_user).filter(name__gender=0)
-        yes_choices = [Choice.objects.filter(choice=0).filter(user=second_user).filter(name_id=choice.name_id).first()
-                       for choice in yes_choices_self if
-                       Choice.objects.filter(choice=0).filter(user=second_user).filter(name_id=choice.name_id)]
-
-        maybe_choices_self = Choice.objects.filter(choice=2).filter(user=self_user).filter(name__gender=0)
-        maybe_choices = [Choice.objects.filter(choice=2).filter(user=second_user).filter(name_id=choice.name_id).first()
-                         for choice in maybe_choices_self if
-                         Choice.objects.filter(choice=2).filter(user=second_user).filter(name_id=choice.name_id)]
-
+        maybe_choices, yes_choices = yes_maybe_choices(second_user, self_user)
         return render(request, 'girl_name/compare_list_b.html', {'yeah': yes_choices,
                                                                  'maybe': maybe_choices})
