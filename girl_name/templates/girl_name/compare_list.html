@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="background-image-girl-compare">
+        <div class="left"></div>
+        <div class="center">
+            <div class="split-compare">
+                <h1>Tak</h1>
+                <h1>Może</h1>
+            </div>
+            <div class="break"></div>
+            <ul class="ul-left">
+                {% if yeah %}
+                    {% for choice in yeah %}
+                        <li>
+                            {{ choice.name }}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li>
+                        Brak wspólnych imion
+                    </li>
+                {% endif %}
+            </ul>
+            <ul>
+                {% if maybe %}
+                    {% for choice in maybe %}
+                        <li>
+                            {{ choice.name }}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li>
+                        Brak wspólnych imion
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="right"></div>
+    </div>
+{% endblock %}

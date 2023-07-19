@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="background-choose-boy">
+        <div class="profile-container">
+            <h1>Podaj email drugiego użytkownika</h1>
+            <h2>{{ error }}</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Email">
+                <div style="display: flex; justify-content: center">
+                    <button class="btn-boy" type="submit">Porównaj wyniki</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

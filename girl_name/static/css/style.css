@@ -92,6 +92,9 @@ a:hover {
     background-position: center;
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-content: start;
+    justify-content: center;
 }
 
 .background-image-girl {
@@ -254,6 +257,12 @@ a:hover {
     font-size: 32px;
     width: 100%;
 }
+.profile-container h2 {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    width: 100%;
+}
 
 .profile-container p {
     padding: 0;
@@ -384,4 +393,174 @@ a:hover {
 
 .d-none {
     display: none !important;
+}
+
+.btn-index {
+    text-decoration: none;
+    background: white;
+    color: black;
+    font-size: 32px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 200px;
+}
+
+.boy .btn-index {
+    border: solid #DBF6FF;
+}
+
+.girl .btn-index {
+    border: solid #FFE8F0;
+}
+
+.boy {
+    position: fixed;
+    top: 400px
+}
+
+.girl {
+    position: fixed;
+    top: 300px
+}
+
+.boy .btn-index:hover {
+    text-decoration: none;
+    background: #DBF6FF;
+}
+
+.girl .btn-index:hover {
+    text-decoration: none;
+    background: #FFE8F0;
+}
+
+
+.background-image-girl-compare {
+    background: #261519;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    color: white;
+}
+
+.background-image-girl-compare .left {
+    background: linear-gradient(to right, deeppink, pink);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-girl-compare .right {
+    background: linear-gradient(to left, deeppink, pink);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-girl-compare .center {
+    background: rgba(255, 192, 203, 0.9);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.background-image-girl-compare .wide-div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-girl-compare li {
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+}
+
+.background-image-girl-compare ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    height: calc(100vh - 110px);
+    overflow-y: auto;
+    width: 49%;
+    box-sizing: border-box;
+}
+.background-image-girl-compare .ul-left {
+    direction: rtl;
+}
+
+
+.background-image-boy-compare {
+    background: #261519;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    color: white;
+}
+
+.background-image-boy-compare .left {
+    background: linear-gradient(to right, blue, lightblue);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-boy-compare .right {
+    background: linear-gradient(to left, blue, lightblue);
+    width: 15%;
+    height: 100%;
+}
+
+.background-image-boy-compare .center {
+    background: rgba(173, 216, 230, 0.9);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.background-image-boy-compare .wide-div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.background-image-boy-compare li {
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+}
+
+.background-image-boy-compare ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    height: calc(100vh - 110px);
+    overflow-y: auto;
+    width: 49%;
+    box-sizing: border-box;
+}
+.background-image-boy-compare .ul-left {
+    direction: rtl;
+}
+.split-compare {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.split-compare h1{
+    width: 49%;
+    text-align: center;
 }
