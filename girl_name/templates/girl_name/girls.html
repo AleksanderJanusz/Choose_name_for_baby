@@ -7,6 +7,19 @@
             <div class="new_head">
                 {% include 'girl_name/choose.html' %}
             </div>
+            <div class="sort">
+                <div class="sort-card">
+                    <div class="card-side">
+                        <a href="#">Sortowanie</a>
+                    </div>
+                    <div class="card-side card-side-back">
+                        <a href="{% url 'set_cookie' 'name__name' %}">Nazwa ↓</a>
+                        <a href="{% url 'set_cookie' '-name__name' %}">Nazwa ↑</a>
+                        <a href="{% url 'set_cookie' '-choice_change_date' %}">Edycja ↓</a>
+                        <a href="{% url 'set_cookie' 'choice_change_date' %}">Edycja ↑</a>
+                    </div>
+                </div>
+            </div>
             <div class="choose" id="over_buttons">
                 <h2 class="border-active"><a href="#">Tak</a></h2>
                 <h2><a href="#">Nie</a></h2>

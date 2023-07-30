@@ -319,6 +319,41 @@ a:hover {
     height: 67px;
 }
 
+.sort {
+    width: 100%;
+    height: 33px;
+}
+.sort-card {
+    margin-left: 5%;
+    width: 75px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.sort-card a{
+    text-decoration: none;
+    color: white;
+}
+
+.sort-card:hover{
+    transform: rotateY(0.5turn);
+}
+
+.card-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.card-side-back {
+    transform: rotateY(0.5turn);
+}
+
 .background-choose-girl {
     background: linear-gradient(to right, rgba(255, 20, 147, 0.5) 0%, rgba(255, 20, 147, 0.8) 15%, rgba(255, 20, 147, 1) 19%, rgba(255, 20, 147, 1) 20%, rgba(255, 192, 203, 1) 50%, rgba(255, 20, 147, 1) 80%, rgba(255, 20, 147, 1) 81%, rgba(255, 20, 147, 0.8) 85%, rgba(255, 20, 147, 0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     width: 100%;

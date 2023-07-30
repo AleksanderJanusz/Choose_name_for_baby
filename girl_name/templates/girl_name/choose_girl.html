@@ -5,16 +5,20 @@
     <div class="background-choose-girl">
         {% include 'girl_name/choose.html' %}
         <div class="profile-container">
-            <h1>{{ name }}</h1>
-            <form method="post">
-                {% csrf_token %}
-                <input type="hidden" value="{{ name.id }}" name="name">
-                <div style="display: flex; justify-content: center">
-                    <button class="btn-girl" type="submit" name="button" value="0">Tak</button>
-                    <button class="btn-girl" type="submit" name="button" value="1">Nie</button>
-                    <button class="btn-girl" type="submit" name="button" value="2">Może</button>
-                </div>
-            </form>
+            {% if name %}
+                <h1>{{ name }}</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{ name.id }}" name="name">
+                    <div style="display: flex; justify-content: center">
+                        <button class="btn-girl" type="submit" name="button" value="0">Tak</button>
+                        <button class="btn-girl" type="submit" name="button" value="1">Nie</button>
+                        <button class="btn-girl" type="submit" name="button" value="2">Może</button>
+                    </div>
+                </form>
+            {% else %}
+                <h1>To już wszystkie imiona</h1>
+            {% endif %}
         </div>
     </div>
 

@@ -26,3 +26,4 @@ class Choice(models.Model):
     choice = models.IntegerField(choices=CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.ForeignKey(Names, on_delete=models.CASCADE)
+    choice_change_date = models.DateTimeField(auto_now=True, null=True)

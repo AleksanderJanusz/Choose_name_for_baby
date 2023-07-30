@@ -11,4 +11,5 @@ urlpatterns = [
     path('serializer/<int:pk>', views.ChoiceSerializerView.as_view(), name='serializer'),
     path('compare-girl/', views.GirlComparison.as_view(), name='compare_girl'),
     path('compare-boy/', views.BoyComparison.as_view(), name='compare_boy'),
+    path('set-cookie/<sort>', views.SetCookie.as_view(), name='set_cookie'),
 ]

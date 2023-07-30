@@ -19,13 +19,26 @@ class LandingPage(View):
 
 class GirlsNameView(LoginRequiredMixin, View):
     def get(self, request):
-        girl_names = Choice.objects.filter(user=request.user).filter(name__gender=1).order_by('name__name')
+        sort = request.COOKIES.get(str(request.user.id))
+        if not sort:
+            sort = '-choice_change_date'
+        girl_names = Choice.objects.filter(user=request.user).filter(name__gender=1).order_by(sort)
         return render(request, 'girl_name/girls.html', {'girls': girl_names})
+
+
+class SetCookie(View):
+    def get(self, request, sort):
+        response = redirect('girls')
+        response.set_cookie(key=str(request.user.id), value=sort, max_age=60*60*24*7)
+        return response
 
 
 class BoysNameView(LoginRequiredMixin, View):
     def get(self, request):
-        boy_names = Choice.objects.filter(user=request.user).filter(name__gender=0).order_by('name__name')
+        sort = request.COOKIES.get(str(request.user.id))
+        if not sort:
+            sort = '-choice_change_date'
+        boy_names = Choice.objects.filter(user=request.user).filter(name__gender=0).order_by(sort)
         return render(request, 'girl_name/boys.html', {'boys': boy_names})
 
 
@@ -52,7 +65,10 @@ class BoysNameResetView(LoginRequiredMixin, View):
 class GirlsNameChoose(LoginRequiredMixin, View):
     def get(self, request):
         names = Names.objects.filter(~Q(user=request.user)).filter(gender=1)
-        name = names[randint(0, len(names) - 1)]
+        name = []
+        if names:
+            name = names[randint(0, len(names) - 1)]
+
         return render(request, 'girl_name/choose_girl.html', {'name': name})
 
     def post(self, request):
